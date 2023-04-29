@@ -1,21 +1,35 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle, faTrashCan } from "@fortawesome/free-solid-svg-icons";
-import { RemoveModal } from "./RemoveModal";
+import { v4 as uuidv4 } from "uuid";
+import { useAppDispatch } from "../redux/hooks";
+import { toggleModal, setDeleteTargetId } from "../redux/taskSlice";
 import "../css/list.css";
-import { useState } from "react";
 
-type Props = { list: { id: number; category: string; name: string }[] };
+type Props = { list: { id: string; category: string; name: string }[] };
 
 export function List({ list }: Props) {
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-  function openModal() {
-    setModalIsOpen(!modalIsOpen);
+  const dispatch = useAppDispatch();
+
+  function openModal(e: React.MouseEvent<HTMLButtonElement>) {
+    dispatch(toggleModal());
+
+    const targetId: string | null | undefined = (function getDeleteTargetId() {
+      return (
+        e.currentTarget.parentElement &&
+        e.currentTarget.parentElement.dataset.id
+      );
+    })();
+
+    if (typeof targetId === "string") {
+      dispatch(setDeleteTargetId(targetId));
+    }
   }
+
   return (
     <>
       <ul className="list">
         {list.map((item) => (
-          <li className="item" key={item.id}>
+          <li className="item" key={uuidv4()} data-id={item.id}>
             <FontAwesomeIcon
               className="icon"
               icon={faCheckCircle}
@@ -25,14 +39,15 @@ export function List({ list }: Props) {
             <button
               className="btn btn-delete"
               aria-label="delete"
-              onClick={openModal}
+              onClick={(e) => {
+                openModal(e);
+              }}
             >
               <FontAwesomeIcon icon={faTrashCan} color="#333" />
             </button>
           </li>
         ))}
       </ul>
-      {modalIsOpen && <RemoveModal />}
     </>
   );
 }
