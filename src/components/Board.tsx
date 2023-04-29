@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlus } from "@fortawesome/free-solid-svg-icons";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
-import { removeText, addList, addText } from "../redux/addTaskSlice";
+import { addList, addText } from "../redux/taskSlice";
 import { ChangeEvent, useState } from "react";
 import { List } from "./List";
 import "../css/board.css";
@@ -13,9 +13,7 @@ type Props = {
 export function Board({ category }: Props) {
   const [isCreated, setIsCreated] = useState(false);
   const [text, setText] = useState("");
-
-  const list = useAppSelector((state) => state.addTask.list);
-
+  const list = useAppSelector((state) => state.task.list);
   const disabled: boolean = text === "" ? true : false;
   const dispatch = useAppDispatch();
 
@@ -26,7 +24,7 @@ export function Board({ category }: Props) {
     setText(e.target.value);
     dispatch(addText(e.target.value));
   }
-  function addToList() {
+  function addToListHandler() {
     dispatch(addList(category));
   }
   function cancelCreating() {
@@ -68,7 +66,7 @@ export function Board({ category }: Props) {
                 className="btn btn-add"
                 type="button"
                 disabled={disabled}
-                onClick={addToList}
+                onClick={addToListHandler}
               >
                 <span>Add</span>
               </button>
