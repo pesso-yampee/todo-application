@@ -6,6 +6,14 @@ import "../css/modal.css";
 export function Modal() {
   const modalIsOpen = useAppSelector((state) => state.task.modalIsOpen);
   const dispatch = useAppDispatch();
+  const customModalStyles = {
+    content: {
+      inset: "0",
+      width: "400px",
+      height: "300px",
+      margin: "auto",
+    },
+  };
 
   function deleteHandler() {
     dispatch(deleteTask());
@@ -17,8 +25,12 @@ export function Modal() {
   }
 
   return (
-    <ReactModal isOpen={modalIsOpen} ariaHideApp={false}>
-      <p>Are you sure delete?</p>
+    <ReactModal
+      isOpen={modalIsOpen}
+      style={customModalStyles}
+      ariaHideApp={false}
+    >
+      <h2>Are you sure delete?</h2>
       <div className="btnBox">
         <button
           className="btn btn-delete"
