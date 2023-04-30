@@ -37,8 +37,8 @@ export function List({ list }: Props) {
             />
             <span className="name">{item.name}</span>
             <button
-              className="btn btn-delete"
-              aria-label="delete"
+              className="btn btn-modalTrigger"
+              aria-label="モーダルを開く"
               onClick={(e) => {
                 openModal(e);
               }}
