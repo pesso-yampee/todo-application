@@ -1,71 +1,75 @@
 .box {
-	overflow: hidden;
-	border: 1px solid #333;
-	border-radius: 5px;
+  overflow: hidden;
 }
 .header {
-	display: flex;
-	align-items: center;
-	width: 100%;
-	padding: 8px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 8px;
+  background-color: #333;
+  border-radius: 5px;
 }
 .badge {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 20px;
-	height: 20px;
-	background-color: #333;
-	border-radius: 50%;
-	line-height: 1;
-	color: #fff;
-	font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  line-height: 1;
+  color: #333;
+  font-size: 12px;
 }
 .title {
-	margin-left: 6px;
-	line-height: 1;
-	font-size: 16px;
-	transform: translateY(2px);
-}
-.createButton {
-	margin-left: auto;
-	border: none;
-	cursor: pointer;
+  margin-left: 6px;
+  line-height: 1;
+  color: #fff;
+  font-size: 16px;
 }
 .contents {
-	overflow: hidden scroll;
-	height: 100vh;
+  overflow: hidden scroll;
+  height: 100vh;
+  /* padding-inline: 8px; */
 }
-.contentsInner {
-	padding: 8px;
+.textAreaWrap {
+  margin-block: 16px;
 }
 .textarea {
-	display: block;
-	width: 100%;
-	padding: 10px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border-color: #dcdcdc;
 }
 .btnBox {
-	display: flex;
-	gap: 6px;
-	align-items: center;
-	margin-top: 6px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin-top: 6px;
 }
-.btn {
-	padding: 8px 10px 7px;
-	border: none;
-	border-radius: 5px;
-	transition: background-color 0.3s;
-	cursor: pointer;
+
+.btn-create {
+  margin-left: auto;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
-.btn:disabled {
-	background-color: rgba(0, 128, 0, 0.5);
-	cursor: initial;
-}
+
 .btn-add {
-	width: 100%;
-	background-color: #008000;
-	color: #fff;
+  width: 100%;
+  padding: 8px 10px 7px;
+  background-color: #008000;
+  border-radius: 5px;
+  color: #fff;
+  transition: background-color 0.3s;
+}
+.btn-add:disabled {
+  background-color: rgba(0, 128, 0, 0.5);
+  cursor: initial;
 }
 .btn-cancel {
-	width: 100%;
+  width: 100%;
+  padding: 8px 10px 7px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }

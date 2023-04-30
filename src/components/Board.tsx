@@ -45,42 +45,40 @@ export function Board({ category }: Props) {
       <div className="header">
         <span className="badge">{filteredArray.length}</span>
         <h2 className="title">{category}</h2>
-        <button className="createButton" type="button" onClick={clickHandler}>
-          <FontAwesomeIcon icon={faCirclePlus} size="xl" />
+        <button className="btn btn-create" type="button" onClick={clickHandler}>
+          <FontAwesomeIcon icon={faCirclePlus} size="xl" color="#fff" />
         </button>
       </div>
-      <div className="contents">
-        <div className="contentsInner">
-          <div style={{ display: isCreated ? "block" : "none" }}>
-            <textarea
-              className="textarea"
-              rows={5}
-              name=""
-              id=""
-              value={text}
-              placeholder="Enter note"
-              onChange={onChangeHandler}
-            />
-            <div className="btnBox">
-              <button
-                className="btn btn-add"
-                type="button"
-                disabled={disabled}
-                onClick={addToListHandler}
-              >
-                <span>Add</span>
-              </button>
-              <button
-                className="btn btn-cancel"
-                type="reset"
-                onClick={cancelCreating}
-              >
-                <span>Cancel</span>
-              </button>
-            </div>
-            <List list={filteredArray} />
-          </div>
+      <div className="textAreaWrap" style={{ display: isCreated ? "block" : "none" }}>
+        <textarea
+          className="textarea"
+          rows={5}
+          name=""
+          id=""
+          value={text}
+          placeholder="Enter note"
+          onChange={onChangeHandler}
+        />
+        <div className="btnBox">
+          <button
+            className="btn btn-add"
+            type="button"
+            disabled={disabled}
+            onClick={addToListHandler}
+          >
+            <span>Add</span>
+          </button>
+          <button
+            className="btn btn-cancel"
+            type="reset"
+            onClick={cancelCreating}
+          >
+            <span>Cancel</span>
+          </button>
         </div>
+      </div>
+      <div className="contents">
+        <List list={filteredArray} />
       </div>
     </div>
   );
