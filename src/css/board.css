@@ -1,13 +1,13 @@
 .box {
   overflow: hidden;
-  border: 1px solid #333;
-  border-radius: 5px;
 }
 .header {
   display: flex;
   align-items: center;
   width: 100%;
   padding: 8px;
+  background-color: #333;
+  border-radius: 5px;
 }
 .badge {
   display: flex;
@@ -15,28 +15,31 @@
   justify-content: center;
   width: 20px;
   height: 20px;
-  background-color: #333;
+  background-color: #fff;
   border-radius: 50%;
   line-height: 1;
-  color: #fff;
+  color: #333;
   font-size: 12px;
 }
 .title {
   margin-left: 6px;
   line-height: 1;
+  color: #fff;
   font-size: 16px;
 }
 .contents {
   overflow: hidden scroll;
   height: 100vh;
+  /* padding-inline: 8px; */
 }
-.contentsInner {
-  padding: 8px;
+.textAreaWrap {
+  margin-block: 16px;
 }
 .textarea {
   display: block;
   width: 100%;
   padding: 10px;
+  border-color: #dcdcdc;
 }
 .btnBox {
   display: flex;
