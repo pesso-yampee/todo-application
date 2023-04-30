@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheckCircle, faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { v4 as uuidv4 } from "uuid";
 import { useAppDispatch } from "../redux/hooks";
 import { toggleModal, setDeleteTargetId } from "../redux/taskSlice";
@@ -30,11 +30,6 @@ export function List({ list }: Props) {
       <ul className="list">
         {list.map((item) => (
           <li className="item" key={uuidv4()} data-id={item.id}>
-            <FontAwesomeIcon
-              className="icon"
-              icon={faCheckCircle}
-              color="#333"
-            />
             <span className="name">{item.name}</span>
             <button
               className="btn btn-modalTrigger"
