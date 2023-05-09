@@ -1,6 +1,6 @@
 import ReactModal from "react-modal";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
-import { toggleModal, deleteTask } from "../redux/taskSlice";
+import { toggleShowModal, deleteItem } from "../redux/taskSlice";
 import "../css/modal.css";
 
 export function Modal() {
@@ -16,12 +16,12 @@ export function Modal() {
   };
 
   function deleteHandler() {
-    dispatch(deleteTask());
-    dispatch(toggleModal());
+    dispatch(deleteItem());
+    dispatch(toggleShowModal());
   }
 
   function closeModal() {
-    dispatch(toggleModal());
+    dispatch(toggleShowModal());
   }
 
   return (

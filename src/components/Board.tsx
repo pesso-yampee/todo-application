@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlus } from "@fortawesome/free-solid-svg-icons";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
-import { addList, addText } from "../redux/taskSlice";
+import { addToList } from "../redux/taskSlice";
 import { ChangeEvent, useState } from "react";
 import { List } from "./List";
 import "../css/board.css";
@@ -22,17 +22,16 @@ export function Board({ category }: Props) {
   }
   function onChangeHandler(e: ChangeEvent<HTMLTextAreaElement>) {
     setText(e.target.value);
-    dispatch(addText(e.target.value));
   }
   function addToListHandler() {
-    dispatch(addList(category));
+    dispatch(addToList({ text: text, category: category }));
   }
   function cancelCreating() {
     setText("");
     setIsCreated(false);
   }
 
-  const filteredArray = (function filterListOfCategory() {
+  const eachCategoryList = (function filterListOfCategory() {
     const result = list.filter((item) => {
       return item.category === category;
     });
@@ -43,13 +42,16 @@ export function Board({ category }: Props) {
   return (
     <div className="box">
       <div className="header">
-        <span className="badge">{filteredArray.length}</span>
+        <span className="badge">{eachCategoryList.length}</span>
         <h2 className="title">{category}</h2>
         <button className="btn btn-create" type="button" onClick={clickHandler}>
           <FontAwesomeIcon icon={faCirclePlus} size="xl" color="#fff" />
         </button>
       </div>
-      <div className="textAreaWrap" style={{ display: isCreated ? "block" : "none" }}>
+      <div
+        className="textAreaWrap"
+        style={{ display: isCreated ? "block" : "none" }}
+      >
         <textarea
           className="textarea"
           rows={5}
@@ -78,7 +80,7 @@ export function Board({ category }: Props) {
         </div>
       </div>
       <div className="contents">
-        <List list={filteredArray} />
+        <List list={eachCategoryList} category={category} />
       </div>
     </div>
   );
