@@ -29,9 +29,6 @@ export const taskSlice = createSlice({
         name: `${action.payload.text}`,
       });
     },
-    toggleShowModal: (state) => {
-      state.modalIsOpen = !state.modalIsOpen;
-    },
     setDeleteItemId: (state, action: PayloadAction<string>) => {
       state.deleteItemId = action.payload;
     },
@@ -68,7 +65,6 @@ export const taskSlice = createSlice({
 
 export const {
   addToList,
-  toggleShowModal,
   deleteItem,
   setDeleteItemId,
   moveTask,

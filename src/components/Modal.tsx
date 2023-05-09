@@ -1,6 +1,7 @@
 import ReactModal from "react-modal";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
-import { toggleShowModal, deleteItem } from "../redux/taskSlice";
+import { deleteItem } from "../redux/taskSlice";
+import { toggleShowModal } from "../redux/modalSlice";
 import "../css/modal.css";
 
 export function Modal() {
