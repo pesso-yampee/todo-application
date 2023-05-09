@@ -5,7 +5,7 @@ import { toggleShowModal } from "../redux/modalSlice";
 import "../css/modal.css";
 
 export function Modal() {
-  const modalIsOpen = useAppSelector((state) => state.task.modalIsOpen);
+  const modalIsOpen = useAppSelector((state) => state.modal.modalIsOpen);
   const dispatch = useAppDispatch();
   const customModalStyles = {
     content: {
