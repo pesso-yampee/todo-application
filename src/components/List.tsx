@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { v4 as uuidv4 } from "uuid";
 import { useAppDispatch } from "../redux/hooks";
-import { setDeleteItemId, moveTask } from "../redux/taskSlice";
+import { setDeleteItemId, moveItem } from "../redux/taskSlice";
 import { toggleShowModal } from "../redux/modalSlice";
 import "../css/list.css";
 
@@ -63,7 +63,7 @@ export function List({ list, category }: Props) {
     if (dropZone.classList.contains("js-dropZone")) {
       typeof dropZoneCategory === "string" &&
         dispatch(
-          moveTask({
+          moveItem({
             id: id,
             dropZoneCategory: dropZoneCategory,
           })
