@@ -1,16 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
+import { v4 as uuidv4 } from "uuid";
 
 interface taskState {
   list: { id: string; category: string; name: string }[];
-  modalIsOpen: boolean;
   deleteItemId: string;
   deleteItemIndex: number;
 }
 
 const initialState: taskState = {
   list: [],
-  modalIsOpen: false,
   deleteItemId: "",
   deleteItemIndex: 0,
 };
@@ -24,7 +23,7 @@ export const taskSlice = createSlice({
       action: PayloadAction<{ text: string; category: string }>
     ) => {
       state.list.push({
-        id: `${action.payload.category}${state.list.length}`,
+        id: uuidv4(),
         category: `${action.payload.category}`,
         name: `${action.payload.text}`,
       });
@@ -44,7 +43,7 @@ export const taskSlice = createSlice({
       // 取得したインデックスを元に配列から削除対象要素を削除する
       state.list.splice(state.deleteItemIndex, 1);
     },
-    moveTask: (
+    moveItem: (
       state,
       action: PayloadAction<{
         id: string;
@@ -63,9 +62,5 @@ export const taskSlice = createSlice({
   },
 });
 
-export const {
-  addToList,
-  deleteItem,
-  setDeleteItemId,
-  moveTask,
-} = taskSlice.actions;
+export const { addToList, deleteItem, setDeleteItemId, moveItem } =
+  taskSlice.actions;
