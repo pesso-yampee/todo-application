@@ -1,8 +1,6 @@
-import React, { ChangeEvent } from "react";
+import React, { ChangeEvent, useState } from "react";
 import { AddButton } from "./AddButton";
 import CancelButton from "./CancelButton";
-import { useAppDispatch, useAppSelector } from "../redux/hooks";
-import { setText } from "../redux/taskSlice";
 
 type Props = {
   category: string;
@@ -11,11 +9,10 @@ type Props = {
 };
 
 export function InputBlock({ category, isCreated, setIsCreated }: Props) {
-  const dispatch = useAppDispatch();
-  const text = useAppSelector((state) => state.task.text);
+  const [text, setText] = useState("");
 
   function onChangeHandler(e: ChangeEvent<HTMLTextAreaElement>) {
-    dispatch(setText(e.target.value));
+    setText(e.target.value);
   }
 
   return (
@@ -33,7 +30,7 @@ export function InputBlock({ category, isCreated, setIsCreated }: Props) {
         onChange={onChangeHandler}
       />
       <div className="btnBox">
-        <AddButton category={category} />
+        <AddButton text={text} category={category} />
         <CancelButton isCreated={isCreated} setIsCreated={setIsCreated} />
       </div>
     </div>

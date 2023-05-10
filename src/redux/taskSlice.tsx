@@ -3,14 +3,12 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 import { v4 as uuidv4 } from "uuid";
 
 interface taskState {
-  text: string;
   list: { id: string; category: string; name: string }[];
   deleteItemId: string;
   deleteItemIndex: number;
 }
 
 const initialState: taskState = {
-  text: "",
   list: [],
   deleteItemId: "",
   deleteItemIndex: 0,
@@ -20,9 +18,6 @@ export const taskSlice = createSlice({
   name: "task",
   initialState,
   reducers: {
-    setText: (state, action: PayloadAction<string>) => {
-      state.text = action.payload;
-    },
     addToList: (
       state,
       action: PayloadAction<{ text: string; category: string }>
@@ -67,5 +62,5 @@ export const taskSlice = createSlice({
   },
 });
 
-export const { setText, addToList, deleteItem, setDeleteItemId, moveItem } =
+export const { addToList, deleteItem, setDeleteItemId, moveItem } =
   taskSlice.actions;
