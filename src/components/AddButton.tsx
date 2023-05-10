@@ -3,11 +3,11 @@ import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { addToList } from "../redux/taskSlice";
 
 type Props = {
+  text: string;
   category: string;
 };
 
-export function AddButton({ category }: Props) {
-  const text = useAppSelector((state) => state.task.text);
+export function AddButton({ text, category }: Props) {
   const disabled: boolean = text === "" ? true : false;
   const dispatch = useAppDispatch();
 
