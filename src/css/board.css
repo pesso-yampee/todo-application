@@ -8,6 +8,7 @@
   padding: 8px;
   background-color: #333;
   border-radius: 5px;
+  margin-bottom: 16px;
 }
 .badge {
   display: flex;
@@ -30,10 +31,9 @@
 .contents {
   overflow: hidden scroll;
   height: 100vh;
-  /* padding-inline: 8px; */
 }
 .textAreaWrap {
-  margin-block: 16px;
+  margin-bottom: 16px;
 }
 .textarea {
   display: block;
