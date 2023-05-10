@@ -12,7 +12,7 @@ type Props = {
   category: string;
 };
 
-export function List({ list, category }: Props) {
+function List({ list, category }: Props) {
   const dispatch = useAppDispatch();
   const [isDragging, setIsDragging] = useState(false);
   const [isDroppable, setIsDroppable] = useState(false);
@@ -109,3 +109,6 @@ export function List({ list, category }: Props) {
     </>
   );
 }
+
+
+export default React.memo(List);
