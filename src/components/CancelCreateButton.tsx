@@ -5,7 +5,7 @@ type Props = {
   setIsCreated: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-function CancelButton({ isCreated, setIsCreated }: Props) {
+function CancelCreateButton({ isCreated, setIsCreated }: Props) {
   function cancelCreating() {
     setIsCreated(!isCreated);
   }
@@ -17,4 +17,4 @@ function CancelButton({ isCreated, setIsCreated }: Props) {
   );
 }
 
-export default React.memo(CancelButton);
+export default React.memo(CancelCreateButton);
