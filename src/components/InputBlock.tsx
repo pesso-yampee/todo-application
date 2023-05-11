@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useState } from "react";
 import { AddButton } from "./AddButton";
-import CancelButton from "./CancelButton";
+import CancelCreateButton from "./CancelCreateButton";
 
 type Props = {
   category: string;
@@ -29,9 +29,9 @@ export function InputBlock({ category, isCreated, setIsCreated }: Props) {
         placeholder="Enter note"
         onChange={onChangeHandler}
       />
-      <div className="btnBox">
+      <div className="btnContainer">
         <AddButton text={text} category={category} />
-        <CancelButton isCreated={isCreated} setIsCreated={setIsCreated} />
+        <CancelCreateButton isCreated={isCreated} setIsCreated={setIsCreated} />
       </div>
     </div>
   );

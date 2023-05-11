@@ -41,7 +41,7 @@
   padding: 10px;
   border-color: #dcdcdc;
 }
-.btnBox {
+.btnContainer {
   display: flex;
   gap: 6px;
   align-items: center;
