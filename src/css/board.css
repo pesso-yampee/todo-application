@@ -22,11 +22,16 @@
   color: #333;
   font-size: 12px;
 }
-.title {
+.boxTitle {
   margin-left: 6px;
   line-height: 1;
   color: #fff;
   font-size: 16px;
+}
+@media screen and (max-width: 767px) {
+  .boxTitle {
+    font-size: 14px;
+  }
 }
 .contents {
   overflow: hidden scroll;

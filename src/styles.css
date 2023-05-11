@@ -14,10 +14,22 @@ html[data-modal-open="true"] {
 }
 
 .container {
+  padding: 20px;
+}
+
+.boxContainer {
+  overflow-x: scroll;
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(5, 300px);
+  margin-top: 16px;
   padding: 20px;
+}
+@media screen and (max-width: 767px) {
+  .boxContainer {
+    margin-top: 10px;
+    padding: 0;
+  }
 }
 
 .btn {

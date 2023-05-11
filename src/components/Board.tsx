@@ -29,7 +29,7 @@ export function Board({ category }: Props) {
     <div className="box">
       <div className="header">
         <span className="badge">{eachCategoryList.length}</span>
-        <h2 className="title">{category}</h2>
+        <h2 className="boxTitle">{category}</h2>
         <button className="btn btn-create" type="button" onClick={clickHandler}>
           <FontAwesomeIcon icon={faCirclePlus} size="xl" color="#fff" />
         </button>

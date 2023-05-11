@@ -1,0 +1,23 @@
+.title {
+  line-height: 1;
+  color: #333;
+  font-family: "Arial Black";
+  font-weight: 700;
+  font-size: 56px;
+}
+.subtitle {
+  display: inline-block;
+  margin-top: 8px;
+  font-family: "Arial Black";
+  font-size: 24px;
+}
+@media screen and (max-width: 767px) {
+  .title {
+    text-indent: -0.5em;
+    font-size: 20px;
+  }
+  .subtitle {
+    margin-top: 0;
+    font-size: 14px;
+  }
+}
