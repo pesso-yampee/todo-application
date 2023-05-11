@@ -14,10 +14,14 @@ export const modalSlice = createSlice({
   reducers: {
     toggleShowModal: (state) => {
       state.modalIsOpen = !state.modalIsOpen;
-
+      const html: Element | null = document.querySelector("html");
       // iOSの場合はモーダル表示中の背景コンテンツをスクロールさせないためにhtmlタグにもスタイルを適用する
       if (navigator.userAgent.match(/iPhone/)) {
-        document.querySelector("html")?.classList.toggle("is-hidden");
+        if (state.modalIsOpen) {
+          html?.setAttribute("data-modal-open", "true");
+        } else {
+          html?.removeAttribute("data-modal-open");
+        }
       }
     },
   },
