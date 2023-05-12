@@ -19,9 +19,8 @@ html[data-modal-open="true"] {
 
 .boxContainer {
   overflow-x: scroll;
-  display: grid;
+  display: flex;
   gap: 20px;
-  grid-template-columns: repeat(5, 300px);
   margin-top: 16px;
   padding: 20px;
 }
