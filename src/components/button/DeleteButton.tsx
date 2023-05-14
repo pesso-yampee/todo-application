@@ -1,6 +1,6 @@
-import { deleteItem } from "../redux/taskSlice";
-import { useAppDispatch } from "../redux/hooks";
-import { toggleShowModal } from "../redux/modalSlice";
+import { deleteItem } from "redux/taskSlice";
+import { useAppDispatch } from "redux/hooks";
+import { toggleShowModal } from "redux/modalSlice";
 
 export function DeleteButton() {
   const dispatch = useAppDispatch();

@@ -1,6 +1,5 @@
-import React from "react";
-import { useAppDispatch, useAppSelector } from "../redux/hooks";
-import { addToList } from "../redux/taskSlice";
+import { useAppDispatch } from "redux/hooks";
+import { addToList } from "redux/taskSlice";
 
 type Props = {
   text: string;

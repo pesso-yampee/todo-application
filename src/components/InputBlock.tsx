@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useState } from "react";
-import { AddButton } from "./AddButton";
-import CancelCreateButton from "./CancelCreateButton";
+import { AddButton } from "components/button/AddButton";
+import CancelCreateButton from "components/button/CancelCreateButton";
 
 type Props = {
   category: string;

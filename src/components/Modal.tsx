@@ -1,8 +1,8 @@
 import ReactModal from "react-modal";
-import { useAppSelector } from "../redux/hooks";
-import { DeleteButton } from "./DeleteButton";
-import { CancelDeleteButton } from "./CancelDeleteButton";
-import "../css/modal.css";
+import { useAppSelector } from "redux/hooks";
+import { DeleteButton } from "components/button/DeleteButton";
+import { CancelDeleteButton } from "components/button/CancelDeleteButton";
+import "css/modal.css";
 
 export function Modal() {
   const modalIsOpen = useAppSelector((state) => state.modal.modalIsOpen);

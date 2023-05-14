@@ -1,5 +1,5 @@
-import { useAppDispatch } from "../redux/hooks";
-import { toggleShowModal } from "../redux/modalSlice";
+import { useAppDispatch } from "redux/hooks";
+import { toggleShowModal } from "redux/modalSlice";
 
 export function CancelDeleteButton() {
   const dispatch = useAppDispatch();

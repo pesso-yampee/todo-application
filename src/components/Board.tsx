@@ -1,10 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlus } from "@fortawesome/free-solid-svg-icons";
-import { useAppSelector } from "../redux/hooks";
+import { useAppSelector } from "redux/hooks";
 import { useMemo, useState } from "react";
-import List from "./List";
-import { InputBlock } from "./InputBlock";
-import "../css/board.css";
+import List from "components/List";
+import { InputBlock } from "components/InputBlock";
+import "css/board.css";
 
 type Props = {
   category: string;

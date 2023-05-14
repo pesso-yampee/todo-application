@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { v4 as uuidv4 } from "uuid";
-import { useAppDispatch } from "../redux/hooks";
-import { setDeleteItemId, moveItem } from "../redux/taskSlice";
-import { toggleShowModal } from "../redux/modalSlice";
-import "../css/list.css";
+import { useAppDispatch } from "redux/hooks";
+import { setDeleteItemId, moveItem } from "redux/taskSlice";
+import { toggleShowModal } from "redux/modalSlice";
+import "css/list.css";
 
 type Props = {
   list: { id: string; category: string; name: string }[];
