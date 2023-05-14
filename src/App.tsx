@@ -1,10 +1,10 @@
 import ReactModal from "react-modal";
 import { Provider } from "react-redux";
-import { store } from "./redux/store";
-import { Board } from "./components/Board";
-import { Modal } from "./components/Modal";
-import { Title } from "./components/Title";
-import "./styles.css";
+import { store } from "redux/store";
+import { Board } from "components/Board";
+import { Modal } from "components/Modal";
+import { Title } from "components/Title";
+import "css/styles.css";
 
 ReactModal.setAppElement("#root");
 
