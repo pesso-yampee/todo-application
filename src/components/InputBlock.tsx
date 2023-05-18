@@ -1,6 +1,7 @@
 import React, { ChangeEvent, useState } from "react";
 import { AddButton } from "components/button/AddButton";
 import CancelCreateButton from "components/button/CancelCreateButton";
+import styles from "./InputBlock.module.css";
 
 type Props = {
   category: string;
@@ -17,11 +18,11 @@ export function InputBlock({ category, isCreated, setIsCreated }: Props) {
 
   return (
     <div
-      className="textAreaWrap"
+      className={styles.textAreaWrap}
       style={{ display: isCreated ? "block" : "none" }}
     >
       <textarea
-        className="textarea"
+        className={styles.textarea}
         rows={5}
         name=""
         id=""
@@ -29,7 +30,7 @@ export function InputBlock({ category, isCreated, setIsCreated }: Props) {
         placeholder="Enter note"
         onChange={onChangeHandler}
       />
-      <div className="btnContainer">
+      <div className={styles.btnContainer}>
         <AddButton text={text} category={category} />
         <CancelCreateButton isCreated={isCreated} setIsCreated={setIsCreated} />
       </div>

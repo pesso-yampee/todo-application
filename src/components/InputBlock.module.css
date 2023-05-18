@@ -1,0 +1,15 @@
+.textAreaWrap {
+  margin-bottom: 16px;
+}
+.textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border-color: #dcdcdc;
+}
+.btnContainer {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin-top: 6px;
+}

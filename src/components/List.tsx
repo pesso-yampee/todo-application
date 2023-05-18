@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 import { useAppDispatch } from "redux/hooks";
 import { setDeleteItemId, moveItem } from "redux/taskSlice";
 import { toggleShowModal } from "redux/modalSlice";
-import "css/list.css";
+import styles from "./List.module.css";
 
 type Props = {
   list: { id: string; category: string; name: string }[];
@@ -76,7 +76,7 @@ function List({ list, category }: Props) {
   return (
     <>
       <ul
-        className="list js-dropZone"
+        className={`${styles.list} js-dropZone`}
         onDragEnter={onDragEnter}
         onDragLeave={onDragLeave}
         onDragOver={(e) => e.preventDefault()}
@@ -85,7 +85,7 @@ function List({ list, category }: Props) {
       >
         {list.map((item) => (
           <li
-            className="item js-draggable"
+            className={`${styles.item} js-draggable`}
             key={uuidv4()}
             id={item.id}
             draggable
@@ -93,9 +93,9 @@ function List({ list, category }: Props) {
             onDragEnd={onDragEnd}
             data-category={item.category}
           >
-            <span className="name">{item.name}</span>
+            <span className={styles.name}>{item.name}</span>
             <button
-              className="btn btn-modalTrigger"
+              className={styles.btnModalTrigger}
               aria-label="モーダルを開く"
               onClick={(e) => {
                 openModal(e);

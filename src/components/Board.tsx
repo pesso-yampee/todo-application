@@ -4,7 +4,7 @@ import { useAppSelector } from "redux/hooks";
 import { useMemo, useState } from "react";
 import List from "components/List";
 import { InputBlock } from "components/InputBlock";
-import "css/board.css";
+import styles from "./Board.module.css";
 
 type Props = {
   category: string;
@@ -26,11 +26,11 @@ export function Board({ category }: Props) {
   }
 
   return (
-    <div className="box">
-      <div className="header">
-        <span className="badge">{eachCategoryList.length}</span>
-        <h2 className="boxTitle">{category}</h2>
-        <button className="btn btn-create" type="button" onClick={clickHandler}>
+    <div className={styles.box}>
+      <div className={styles.header}>
+        <span className={styles.badge}>{eachCategoryList.length}</span>
+        <h2 className={styles.boxTitle}>{category}</h2>
+        <button className={styles.btnCreate} type="button" onClick={clickHandler}>
           <FontAwesomeIcon icon={faCirclePlus} size="xl" color="#fff" />
         </button>
       </div>
@@ -39,7 +39,7 @@ export function Board({ category }: Props) {
         isCreated={isCreated}
         setIsCreated={setIsCreated}
       />
-      <div className="contents">
+      <div className={styles.contents}>
         <List list={eachCategoryList} category={category} />
       </div>
     </div>

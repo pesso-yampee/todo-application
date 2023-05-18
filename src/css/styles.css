@@ -8,6 +8,11 @@ html[data-modal-open="true"] {
   overflow: auto;
 }
 
+button {
+  border: none;
+  cursor: pointer;
+}
+
 .App {
   font-family: sans-serif;
   text-align: center;
@@ -31,7 +36,7 @@ html[data-modal-open="true"] {
   }
 }
 
-.btn {
-  border: none;
-  cursor: pointer;
+/* モーダル表示中にbodyタグにつくクラス */
+.ReactModal__Body--open {
+  overflow: hidden;
 }

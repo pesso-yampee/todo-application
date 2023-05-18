@@ -1,0 +1,47 @@
+.box {
+  overflow: hidden;
+  min-width: 300px;
+}
+.header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 8px;
+  background-color: #333;
+  border-radius: 5px;
+  margin-bottom: 16px;
+}
+.badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  line-height: 1;
+  color: #333;
+  font-size: 12px;
+}
+.boxTitle {
+  margin-left: 6px;
+  line-height: 1;
+  color: #fff;
+  font-size: 16px;
+}
+@media screen and (max-width: 767px) {
+  .boxTitle {
+    font-size: 14px;
+  }
+}
+.contents {
+  overflow: hidden scroll;
+  height: 100vh;
+}
+
+.btnCreate {
+  margin-left: auto;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
