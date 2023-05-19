@@ -1,0 +1,30 @@
+.btn {
+  width: 100%;
+  padding: 8px 10px 7px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+/* 追加ボタン */
+.btnAdd {
+  width: 100%;
+  padding: 8px 10px 7px;
+  background-color: #008000;
+  border-radius: 5px;
+  color: #fff;
+  transition: background-color 0.3s;
+}
+
+.btnAdd:disabled {
+  background-color: rgba(0, 128, 0, 0.5);
+  cursor: initial;
+}
+
+/* 削除ボタン */
+.btnDelete {
+  width: 100%;
+  padding: 8px 10px 7px;
+  background-color: red;
+  border-radius: 5px;
+  color: #fff;
+}

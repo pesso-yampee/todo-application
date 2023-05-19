@@ -1,6 +1,6 @@
 import { useAppDispatch } from "redux/hooks";
 import { addToList } from "redux/taskSlice";
-import styles from "./AddButton.module.css";
+import { Button } from "ui/components/atoms/button";
 
 type Props = {
   text: string;
@@ -16,13 +16,12 @@ export function AddButton({ text, category }: Props) {
   }
 
   return (
-    <button
-      className={styles.btnAdd}
+    <Button
+      className="btnAdd"
       type="button"
+      onClickEvent={addToListHandler}
+      text="Add"
       disabled={disabled}
-      onClick={addToListHandler}
-    >
-      <span>Add</span>
-    </button>
+    />
   );
 }

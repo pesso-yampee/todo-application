@@ -1,6 +1,6 @@
 import { useAppDispatch } from "redux/hooks";
 import { toggleShowModal } from "redux/modalSlice";
-import styles from "./CancelButton.module.css";
+import { Button } from "ui/components/atoms/button";
 
 export function CancelDeleteButton() {
   const dispatch = useAppDispatch();
@@ -8,10 +8,14 @@ export function CancelDeleteButton() {
   function closeModal() {
     dispatch(toggleShowModal());
   }
-  
+
   return (
-    <button className={styles.btn} type="reset" onClick={closeModal}>
-      <span>Cancel</span>
-    </button>
+    <Button
+      className="btn"
+      type="reset"
+      onClickEvent={closeModal}
+      text="Cancel"
+      disabled={false}
+    />
   );
 }

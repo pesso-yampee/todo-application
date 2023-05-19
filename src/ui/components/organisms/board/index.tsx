@@ -2,8 +2,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlus } from "@fortawesome/free-solid-svg-icons";
 import { useAppSelector } from "redux/hooks";
 import { useMemo, useState } from "react";
-import List from "components/List";
-import { InputBlock } from "components/InputBlock";
+import List from "ui/components/organisms/list";
+import { InputBlock } from "ui/components/organisms/inputBlock";
 import styles from "./Board.module.css";
 
 type Props = {
@@ -30,7 +30,11 @@ export function Board({ category }: Props) {
       <div className={styles.header}>
         <span className={styles.badge}>{eachCategoryList.length}</span>
         <h2 className={styles.boxTitle}>{category}</h2>
-        <button className={styles.btnCreate} type="button" onClick={clickHandler}>
+        <button
+          className={styles.btnCreate}
+          type="button"
+          onClick={clickHandler}
+        >
           <FontAwesomeIcon icon={faCirclePlus} size="xl" color="#fff" />
         </button>
       </div>
