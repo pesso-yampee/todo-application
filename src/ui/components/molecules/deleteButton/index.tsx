@@ -1,7 +1,7 @@
 import { deleteItem } from "redux/taskSlice";
 import { useAppDispatch } from "redux/hooks";
 import { toggleShowModal } from "redux/modalSlice";
-import styles from "./DeleteButton.module.css";
+import { Button } from "ui/components/atoms/button";
 
 export function DeleteButton() {
   const dispatch = useAppDispatch();
@@ -12,8 +12,12 @@ export function DeleteButton() {
   }
 
   return (
-    <button className={styles.btn} type="button" onClick={deleteHandler}>
-      <span>Delete</span>
-    </button>
+    <Button
+      className="btnDelete"
+      type="button"
+      onClickEvent={deleteHandler}
+      text="Delete"
+      disabled={false}
+    />
   );
 }

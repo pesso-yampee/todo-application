@@ -1,7 +1,7 @@
 import ReactModal from "react-modal";
 import { useAppSelector } from "redux/hooks";
-import { DeleteButton } from "components/button/DeleteButton";
-import { CancelDeleteButton } from "components/button/CancelDeleteButton";
+import { DeleteButton } from "ui/components/molecules/deleteButton";
+import { CancelDeleteButton } from "ui/components/molecules/cancelDeleteButton";
 import styles from "./Modal.module.css";
 
 export function Modal() {

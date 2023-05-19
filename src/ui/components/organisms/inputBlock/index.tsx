@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useState } from "react";
-import { AddButton } from "components/button/AddButton";
-import CancelCreateButton from "components/button/CancelCreateButton";
+import { AddButton } from "ui/components/molecules/addButton";
+import { CancelCreateButton } from "ui/components/molecules/cancelCreateButton";
 import styles from "./InputBlock.module.css";
 
 type Props = {
