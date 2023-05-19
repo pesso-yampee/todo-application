@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./CancelButton.module.css";
 
 type Props = {
   isCreated: boolean;
@@ -11,7 +12,7 @@ function CancelCreateButton({ isCreated, setIsCreated }: Props) {
   }
 
   return (
-    <button className="btn btn-cancel" type="reset" onClick={cancelCreating}>
+    <button className={styles.btn} type="reset" onClick={cancelCreating}>
       <span>Cancel</span>
     </button>
   );

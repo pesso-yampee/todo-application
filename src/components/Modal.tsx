@@ -1,8 +1,8 @@
 import ReactModal from "react-modal";
-import { useAppSelector } from "../redux/hooks";
-import { DeleteButton } from "./DeleteButton";
-import { CancelDeleteButton } from "./CancelDeleteButton";
-import "../css/modal.css";
+import { useAppSelector } from "redux/hooks";
+import { DeleteButton } from "components/button/DeleteButton";
+import { CancelDeleteButton } from "components/button/CancelDeleteButton";
+import styles from "./Modal.module.css";
 
 export function Modal() {
   const modalIsOpen = useAppSelector((state) => state.modal.modalIsOpen);
@@ -22,7 +22,7 @@ export function Modal() {
       ariaHideApp={false}
     >
       <h2>Are you sure delete?</h2>
-      <div className="btnContainer">
+      <div className={styles.btnContainer}>
         <DeleteButton />
         <CancelDeleteButton />
       </div>

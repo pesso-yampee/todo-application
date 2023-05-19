@@ -1,6 +1,6 @@
-import React from "react";
-import { useAppDispatch, useAppSelector } from "../redux/hooks";
-import { addToList } from "../redux/taskSlice";
+import { useAppDispatch } from "redux/hooks";
+import { addToList } from "redux/taskSlice";
+import styles from "./AddButton.module.css";
 
 type Props = {
   text: string;
@@ -17,7 +17,7 @@ export function AddButton({ text, category }: Props) {
 
   return (
     <button
-      className="btn btn-add"
+      className={styles.btnAdd}
       type="button"
       disabled={disabled}
       onClick={addToListHandler}
